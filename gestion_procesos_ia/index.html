@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Simulador de Planificación de Procesos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+    <header>
+        <h1> Simulador de Planificación de Procesos </h1>
+    </header>
+    <main>
+        <section id="entrada-procesos">
+            <h2>Ingreso de Procesos</h2>
+            <form id="form-procesos">
+                <div>
+                    <label for="id">Proceso</label>
+                    <input type="text" id="id" required>
+                </div>
+
+                <div>
+                    <label for="llegada">Tiempo de Llegada</label>
+                    <input type="number" id="llegada" required >
+                </div>
+
+                <div>
+                    <label for="duracion">Duración del Proceso</label>
+                    <input type="number" id="duracion" required>
+                </div>
+
+                <div>
+                    <label for="prioridad">Prioridad</label>
+                    <input type="number" id="prioridad">
+                </div>
+
+                <div>
+                    <label for="quantum">Quantum (Round Robin)</label>
+                    <input type="number" id="quantum">
+                </div>
+
+                <button type="submit"> Agregar Proceso</button>
+            </form>
+        </section>
+
+        <section id="tabla-procesos">
+            <h2> Lista de Procesos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Proceso</th>
+                        <th>Llegada</th>
+                        <th>Duración</th>
+                        <th>Prioridad</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    <tr class="empty-state">
+                        <td colspan="6">No hay procesos agregados. Agrega uno para comenzar</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="resultados">
+            <h2> Resultados de la Simulación</h2>
+            <table id="tabla-resultados">
+                <thead>
+                    <tr>
+                        <th>Algoritmo</th>
+                        <th>Orden de Ejecución</th>
+                        <th>Tiempo de Espera Promedio</th>
+                        <th>Tiempo de Retorno Promedio</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-resultados-body">
+                    <tr class="empty-state">
+                        <td colspan="4">Ejecuta la simulación para ver los resultados</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="ejecutar"> Ejecutar Simulación</button>
+        </section>
+
+        <div id="ia-section">
+            <h3>Recomendación Inteligente</h3>
+            <p id="ia-opinion">Agrega procesos y ejecuta la simulación para recibir una recomendación personalizada.</p>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/brain.js@2.0.0-beta.2/dist/brain-browser.min.js"></script>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
